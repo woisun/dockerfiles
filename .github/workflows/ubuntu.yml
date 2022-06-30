@@ -1,14 +1,13 @@
-name: nohost-构建和提交docker
+name: ubuntu-构建和提交docker
 
 on:
   push:
     branches: [main]
     paths: 
-      - "nohost/**"
-      - ".github/workflows/nohost.yml"
+      - "ubuntu/**"
+      - ".github/workflows/ubuntu.yml"
       - "!**.md"
-  schedule: 
-    - cron: '0 2 */7 * *' # Weekly on Sundays at 02:00 
+
 
 jobs:
   
@@ -23,8 +22,11 @@ jobs:
 
 
 
-              
-    - name: nohost-latest
+   
+   
+   
+           
+    - name: ubuntu
       uses: docker/build-push-action@v1.1.0
       with:
         # Username used to log in to a Docker registry. If not set then no login will occur
@@ -32,17 +34,17 @@ jobs:
         # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
         password: ${{ secrets.PASSWORD }}
         # Docker repository to tag the image with
-        repository: adockero/nohost
+        repository: adockero/ubuntu
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
         tags: latest
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
-        path: ./nohost/
-        dockerfile: nohost/Dockerfile
+        path: ./ubuntu/
+        dockerfile: ubuntu/Dockerfile
         # Always attempt to pull a newer version of the image
         always_pull: true
         # 构建参数
-        # build_args: GIT_BRANCH=master
+        # build_args: BASE_FORM=hyperf/hyperf:7.4-alpine-v3.11
         # Adds labels with git repository information to the built image
         add_git_labels: true  
 
-              
+     
