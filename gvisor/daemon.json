@@ -1,0 +1,19 @@
+{
+    "runtimes": {
+        "runsc": {
+            "path": "/usr/local/bin/runsc"
+        },
+        "runsc-ptrace": {
+            "path": "/usr/local/bin/runsc",
+            "runtimeArgs": [
+                "--platform=ptrace"
+            ]
+        },
+        "runsc-kvm": {
+            "path": "/usr/local/bin/runsc",
+            "runtimeArgs": [
+                "--platform=kvm"
+            ]
+        }
+    }
+}

@@ -1,7 +1,12 @@
 #!/usr/bin/env ash 
 
-/open-sshd-passwd.sh
 
+if [ -f /open-sshd-jsh.sh ];then
+    /open-sshd-jsh.sh;
+    rm /open-sshd-jsh.sh;
+fi
+
+/open-sshd-passwd.sh
 
 
 if [ -f /usr/local/bin/dockerd-entrypoint.sh ];then
