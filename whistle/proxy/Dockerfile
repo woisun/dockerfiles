@@ -13,7 +13,7 @@ ENV ADMIN_USERNAME=admin \
     MORE_OPTIONS="" \
     LOCAL_RULE='' \
     WHISTLE_MORE_ARGS='' \
-    PROXY_ADDR='nginx'
+    PROXY_ADDR=''
 
 
 
